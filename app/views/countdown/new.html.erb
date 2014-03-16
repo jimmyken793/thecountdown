@@ -1,5 +1,6 @@
 
 <div id="create_countdown_table_cont">
+	<h1>倒數產生器</h1>
 	<div class="row">
 		<div class="col-md-offset-3 col-md-2">
 			<%= label_tag(:title, "倒數標題") %>
@@ -21,13 +22,7 @@
 			<%= label_tag(:time, "目標時間") %>
 		</div>
 		<div class="col-md-4">
-			<div id="datetimepicker" class="input-append date">
-				<input data-format="yyyy/MM/dd hh:mm:ss" type="text" id="time"></input>
-				<span class="add-on">
-					<i data-time-icon="icon-time" data-date-icon="icon-calendar">
-					</i>
-				</span>
-			</div>
+			<%= text_field_tag(:time, "", :id => "time", "data-date-format"=>"YYYY/MM/DD hh:mm") %>
 		</div>
 	</div>
 	<div class="row">
@@ -38,21 +33,27 @@
 </div>
 <script type="text/javascript">
 function goto_countdown(){
-	var location = "/" + 
-		encodeURIComponent($("#title").val()) +
+	var title = $("#title").val();
+	var end_title = $("#end_title").val();
+	if(title === ""){
+		title = " ";
+	}
+	if(end_title === ""){
+		end_title = " ";
+	}
+	var location = window.location.origin + "/" + 
+		encodeURIComponent(title) +
 		"/" + 
-		encodeURIComponent($("#end_title").val()) +
+		encodeURIComponent(end_title) +
 		"/" + 
-		encodeURIComponent($('#datetimepicker').data('DateTimePicker').getDate().getTime()/1000);
+		encodeURIComponent($('#time').data('DateTimePicker').getDate()._d.getTime()/1000);
 	console.log(location);
 	window.location = location;
 }
 $(function() {
 	$("#btn_create").click(goto_countdown);
-	$('#datetimepicker').datetimepicker({
+	$('#time').datetimepicker({
 	  language: 'zh-TW',
-	  maskInput: true,           // disables the text input mask
-	  startDate: new Date(),      // set a minimum date
 	});
 });
 </script>
