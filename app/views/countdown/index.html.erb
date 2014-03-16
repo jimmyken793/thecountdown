@@ -1,0 +1,11 @@
+<div class="placeholder">
+<p><span id="now"></span></p>
+<p class="normal-only"><%=@title%></p>
+<p class="timeup-only"><%=@timeup%></p>
+<hr>
+<canvas id="display" width="1000" height="160">
+</canvas>
+</div>
+<script>
+var dest_date = new Date(<%=@dest_time%>*1000);
+</script>

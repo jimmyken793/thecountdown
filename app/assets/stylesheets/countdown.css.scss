@@ -1,0 +1,52 @@
+body{
+  background-color: #000;
+  font: 60px/1.5 "HiraMinProN-W6", serif;
+  color: #e95d0f;
+}
+
+body.is-timeup{
+  color: #f33;
+}
+.placeholder{
+  position: absolute;
+  width: 1000px;
+  height: 175px;
+
+  left: 50%;
+  margin-left: -500px;
+  margin-top: 1em;
+}
+p{
+  margin: 0;
+  text-align: center
+}
+hr{
+  border-color: #e95d0f;
+  margin: 0.25em 0;
+}
+.normal-only, .timeup-only{
+  font-size: 135px;
+  /*letter-spacing:10px;*/
+}
+
+.is-timeup hr{
+  border-color: #f33;
+}
+  
+.is-timeup .normal-only, .timeup-only{
+  display: none;
+}
+.is-timeup .timeup-only{
+  display: block;
+}
+
+#display{
+  margin-top: 30px;
+}
+
+#create_countdown_table_cont{
+  input[type="text"]{
+    width:10em;
+  }
+  font: 35px "HiraMinProN-W6", serif;
+}
