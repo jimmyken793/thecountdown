@@ -43,7 +43,7 @@ function goto_countdown(){
 		"/" + 
 		encodeURIComponent($("#end_title").val()) +
 		"/" + 
-		encodeURIComponent($('#datetimepicker').data('datetimepicker')._date.getTime()/1000);
+		encodeURIComponent($('#datetimepicker').data('DateTimePicker').getDate().getTime()/1000);
 	console.log(location);
 	window.location = location;
 }
