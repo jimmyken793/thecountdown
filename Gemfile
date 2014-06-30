@@ -47,6 +47,8 @@ gem 'bootstrap-sass'
 gem 'momentjs-rails', '~> 2.5.0'
 gem 'bootstrap3-datetimepicker-rails'
 
+gem 'rails_serve_static_assets', group: [:production]
+
 group :development do
 	gem 'sqlite3'
 end
